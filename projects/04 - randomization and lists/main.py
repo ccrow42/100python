@@ -27,3 +27,8 @@ print (states)
 print (len(states))
 # this is cool:
 #names = names_string.split(", ")
+
+# you can also nest lists
+
+
+print(states.index("Delaware"))

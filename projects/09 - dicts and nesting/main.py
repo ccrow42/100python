@@ -7,7 +7,7 @@ print (logo)
 bids = {}
 bidding_finished = False
 
-# Virtual environment notes: 
+# Virtual environment notes:  
 #ccrow@ccrow-gentoo ~/personal/100python $ cd projects/09\ -\ dicts\ and\ nesting/
 #ccrow@ccrow-gentoo ~/personal/100python/projects/09 - dicts and nesting $ python -m venv .
 #ccrow@ccrow-gentoo ~/personal/100python/projects/09 - dicts and nesting $ . bin/activate

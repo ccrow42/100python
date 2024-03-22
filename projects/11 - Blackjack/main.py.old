@@ -1,0 +1,42 @@
+
+
+import random
+
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+game_end = False
+while not game_end:
+    dealer = []
+    player = []
+    input = input("Would you like to play a game of blackjack? (y/n) ")
+    if input == "n":
+        break
+
+    # initial deal:
+    # dealer card 0 will be masked until the end
+
+    dealer[0] = cards[randint(0,13)]
+    dealer[1] = cards[randint(0,13)]
+    player[0] = cards[randint(0,13)]
+    player[1] = cards[randint(0,13)]
+
+    player_total = sum(player)
+    dealer_total = sum(dealer)
+
+    print (f"Dealer hand: [x] [{dealer[1]}]")
+    print (f"Player hand: {player[0]} {player[1]}")
+
+    hand_end = false
+    while not hand_end:
+        input = input("Would you like another card? (y/n) ")
+        if input == "y":
+            player.append(cards[randint(0,13)])
+        
+        #Check for bust:
+        if sum(player > 21):
+            print ("you loose!")
+            game_end = false
+            break
+
+        #Dealer logic
+        if sum(dealer) < 17:

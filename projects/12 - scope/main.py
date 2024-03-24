@@ -13,6 +13,8 @@ import random
 
 print (art.logo)
 
+game_end = False
+
 difficulty = input ("Would you like to play an easy or hard game? ")
 if difficulty == "easy":
     lives = 10
@@ -21,12 +23,14 @@ elif difficulty == "hard":
 else:
     print ("invalid entry")
     lives = 0
+    game_end = True
     win = False
 
+    
 number = random.randint(1,101)
 
 
-while lives != 0 or win == False:
+while not game_end:
 
     guess = int(input("I'm thinking of a number between 1 and 100. Guess: "))
     if guess > number:
@@ -40,6 +44,13 @@ while lives != 0 or win == False:
     elif guess == number:
         print ("You guessed it!")
         win = True
+        game_end = True
+    
+    # Check lives
+    if lives == 0:
+        win = False
+        game_end = True
+
 
 if win:
     print ("You win!")
